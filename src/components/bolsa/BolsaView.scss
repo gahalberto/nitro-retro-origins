@@ -1,0 +1,249 @@
+.nitro-bolsa {
+  width: 450px;
+  min-height: 400px;
+  font-family: "Volter Goldfish", monospace;
+  background-image: url("@/assets/images/purse-22.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: transparent;
+  border: none !important;
+  box-shadow: none !important;
+  user-select: none; /* Evita seleção de texto durante o drag */
+}
+
+/* Remover TODAS as bordas e sombras do card */
+.nitro-bolsa,
+.nitro-bolsa.nitro-card,
+.nitro-bolsa.rounded,
+.nitro-bolsa.shadow {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.nitro-bolsa.dragging {
+  pointer-events: none; /* Melhora performance durante o drag */
+}
+
+.nitro-bolsa .drag-area {
+  background: transparent;
+}
+
+.nitro-bolsa .drag-area:hover {
+  background: rgba(255, 255, 255, 0.1); /* Feedback visual sutil */
+}
+
+.nitro-bolsa::before {
+  display: none;
+}
+
+.nitro-bolsa .close-button {
+  position: absolute;
+  top: 56px;
+  right: 55px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  border: none;
+  background: transparent;
+}
+
+.nitro-bolsa .close-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.nitro-bolsa .card-header {
+  font-family: "Volter Goldfish", monospace;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  border-bottom: none;
+}
+
+.nitro-bolsa .card-content {
+  padding: 1.5rem;
+  font-family: "Volter Goldfish", monospace;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.nitro-bolsa .bolsa-title {
+  font-family: "Volter Goldfish", monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.nitro-bolsa .currency-amount {
+  font-family: "Volter Goldfish", monospace;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.nitro-bolsa .btn {
+  font-size: 0.875rem;
+  font-family: "Volter Goldfish", monospace;
+  letter-spacing: 0.5px;
+}
+
+.nitro-bolsa .custom-button {
+  background: white;
+  border: 1px solid #333;
+  border-bottom: 2px solid #333;
+  border-right: 2px solid #333;
+  border-radius: 6px;
+  font-family: "Volter Goldfish", monospace;
+  font-size: 0.65rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #333;
+}
+
+.nitro-bolsa .custom-button:hover {
+  background: #f8f9fa;
+  transform: translateY(1px);
+  border-bottom: 1px solid #333;
+  border-right: 1px solid #333;
+}
+
+.nitro-bolsa .custom-button:active {
+  transform: translateY(1px);
+  border-bottom: 1px solid #333;
+  border-right: 1px solid #333;
+}
+
+.nitro-bolsa .currency-item {
+  border: 1px solid rgba(222, 226, 230, 0.8);
+  transition: all 0.2s ease;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.nitro-bolsa .currency-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.nitro-bolsa .bg-primary.currency-item {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 123, 255, 0.95),
+    rgba(0, 86, 179, 0.95)
+  ) !important;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.4);
+  color: white;
+}
+
+.nitro-bolsa .fs-4 {
+  font-size: 1.5rem !important;
+}
+
+.nitro-bolsa .fs-5 {
+  font-size: 1.25rem !important;
+}
+
+/* Remover backgrounds e bordas dos componentes Nitro */
+.nitro-bolsa .card,
+.nitro-bolsa .nitro-card,
+.nitro-bolsa .nitro-card-content,
+.nitro-bolsa .nitro-card-header {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remover bordas do card principal */
+.nitro-bolsa,
+.nitro-bolsa .nitro-card-view {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+/* Remover borda inferior do card e botão de redimensionamento */
+.nitro-bolsa .card-footer,
+.nitro-bolsa .nitro-card-footer,
+.nitro-bolsa .resize-handle,
+.nitro-bolsa .card-resize,
+.nitro-bolsa .nitro-card-resize {
+  display: none !important;
+}
+
+/* Remover qualquer borda ou sombra adicional */
+.nitro-bolsa *,
+.nitro-bolsa *:before,
+.nitro-bolsa *:after {
+  border-bottom: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Sobrescrever especificamente classes do Bootstrap */
+.nitro-bolsa.card,
+.nitro-bolsa .card,
+.nitro-bolsa.rounded,
+.nitro-bolsa .rounded,
+.nitro-bolsa.shadow,
+.nitro-bolsa .shadow {
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* Ocultar botões de controle do card */
+.nitro-bolsa .card-controls,
+.nitro-bolsa .nitro-card-controls,
+.nitro-bolsa .window-controls {
+  display: none !important;
+}
+
+/* Remover backgrounds dos componentes Grid e Flex */
+.nitro-bolsa .grid,
+.nitro-bolsa .flex,
+.nitro-bolsa .column {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Garantir que todos os elementos filhos tenham background transparente */
+.nitro-bolsa > *,
+.nitro-bolsa > * > *,
+.nitro-bolsa > * > * > * {
+  background-color: transparent !important;
+}
+
+/* Exceções para elementos que precisam manter o background */
+.nitro-bolsa .currency-item.bg-primary {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 123, 255, 0.95),
+    rgba(0, 86, 179, 0.95)
+  ) !important;
+}
