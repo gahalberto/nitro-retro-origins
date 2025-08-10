@@ -5,7 +5,8 @@ import { useRoomEngineEvent } from '../../../events';
 import { useFurniRemovedEvent } from '../../engine';
 
 const useFurnitureExchangeWidgetState = () =>
-{
+{   
+    console.log('Estamos em useFurnitureExchangeWidgetState');
     const [ objectId, setObjectId ] = useState(-1);
     const [ category, setCategory ] = useState(-1);
     const [ value, setValue ] = useState(0);
@@ -26,6 +27,7 @@ const useFurnitureExchangeWidgetState = () =>
 
     useRoomEngineEvent<RoomEngineTriggerWidgetEvent>(RoomEngineTriggerWidgetEvent.REQUEST_CREDITFURNI, event =>
     {
+        console.log('💰 [FURNITURE DEBUG] Exchange - REQUEST_CREDITFURNI evento recebido:', event);
         const roomObject = GetRoomEngine().getRoomObject(event.roomId, event.objectId, event.category);
 
         if(!roomObject || !IsOwnerOfFurniture(roomObject)) return;

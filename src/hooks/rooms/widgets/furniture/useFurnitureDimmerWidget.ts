@@ -6,6 +6,7 @@ import { useRoom } from '../../useRoom';
 
 const useFurnitureDimmerWidgetState = () =>
 {
+    console.log('💡 [FURNITURE DEBUG] useFurnitureDimmerWidgetState - Hook inicializado');
     const [ presets, setPresets ] = useState<DimmerFurnitureWidgetPresetItem[]>([]);
     const [ selectedPresetId, setSelectedPresetId ] = useState(0);
     const [ dimmerState, setDimmerState ] = useState(0);

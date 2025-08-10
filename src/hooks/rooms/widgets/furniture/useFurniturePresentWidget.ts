@@ -12,6 +12,7 @@ const POSTER: string = 'poster';
 
 const useFurniturePresentWidgetState = () =>
 {
+    console.log('🎁 [FURNITURE DEBUG] useFurniturePresentWidgetState - Hook inicializado');
     const [ objectId, setObjectId ] = useState(-1);
     const [ classId, setClassId ] = useState(-1);
     const [ itemType, setItemType ] = useState<string>(null);

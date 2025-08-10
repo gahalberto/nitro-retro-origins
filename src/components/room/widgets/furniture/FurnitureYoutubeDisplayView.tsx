@@ -12,6 +12,7 @@ interface FurnitureYoutubeDisplayViewProps extends AutoGridProps
 
 export const FurnitureYoutubeDisplayView: FC<{}> = FurnitureYoutubeDisplayViewProps =>
 {
+    console.log('FurnitureYoutubeDisplayViewProps', FurnitureYoutubeDisplayViewProps);
     const [ player, setPlayer ] = useState<any>(null);
     const { objectId = -1, videoId = null, videoStart = 0, videoEnd = 0, currentVideoState = null, selectedVideo = null, playlists = [], onClose = null, previous = null, next = null, pause = null, play = null, selectVideo = null } = useFurnitureYoutubeWidget();
 

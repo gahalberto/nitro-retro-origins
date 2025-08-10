@@ -7,6 +7,7 @@ import { useNotification } from './../../../notification';
 
 const useFurnitureCraftingWidgetState = () =>
 {    
+    console.log('🔨 [FURNITURE DEBUG] useFurnitureCraftingWidgetState - Hook inicializado');
     const [ objectId, setObjectId ] = useState(-1);
     const [ recipes, setRecipes ] = useState<ICraftingRecipe[]>([]);
     const [ selectedRecipe, setSelectedRecipe ] = useState<ICraftingRecipe>(null);
@@ -51,6 +52,7 @@ const useFurnitureCraftingWidgetState = () =>
 
     useRoomEngineEvent<RoomEngineTriggerWidgetEvent>(RoomEngineTriggerWidgetEvent.OPEN_WIDGET, event => 
     {
+        console.log('🔨 [FURNITURE DEBUG] Crafting - OPEN_WIDGET evento recebido:', event);
         if (event.widget !== RoomWidgetEnum.CRAFTING) return;
 
         setObjectId(event.objectId);

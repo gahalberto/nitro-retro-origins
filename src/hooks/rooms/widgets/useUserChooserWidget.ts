@@ -5,7 +5,8 @@ import { useUserAddedEvent, useUserRemovedEvent } from '../engine';
 import { useRoom } from '../useRoom';
 
 const useUserChooserWidgetState = () =>
-{
+{   
+    console.log('👤 [USER DEBUG] useUserChooserWidgetState - Hook initialized');
     const [ items, setItems ] = useState<RoomObjectItem[]>(null);
     const { roomSession = null } = useRoom();
 

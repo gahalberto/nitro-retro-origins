@@ -4,7 +4,8 @@ import { useRoomSessionManagerEvent } from '../../events';
 import { useRoom } from '../useRoom';
 
 const usePollWidgetState = () =>
-{
+{   
+    console.log('📊 [POLL DEBUG] usePollWidgetState - Hook inicializado');
     const { roomSession = null } = useRoom();
 
     const startPoll = (pollId: number) => roomSession.sendPollStartMessage(pollId);

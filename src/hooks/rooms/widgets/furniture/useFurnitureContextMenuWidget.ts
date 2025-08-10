@@ -12,6 +12,7 @@ export const MYSTERYTROPHY_OPEN_DIALOG: string = 'MYSTERYTROPHY_OPEN_DIALOG';
 
 const useFurnitureContextMenuWidgetState = () =>
 {
+    console.log('📋 [FURNITURE DEBUG] useFurnitureContextMenuWidgetState - Hook inicializado');
     const [ objectId, setObjectId ] = useState(-1);
     const [ mode, setMode ] = useState<string>(null);
     const [ confirmMode, setConfirmMode ] = useState<string>(null);
@@ -85,6 +86,7 @@ const useFurnitureContextMenuWidgetState = () =>
         RoomEngineTriggerWidgetEvent.REQUEST_MYSTERYTROPHY_OPEN_DIALOG
     ], event =>
     {
+        console.log('📋 [FURNITURE DEBUG] ContextMenu - Evento recebido:', event.type, event);
         const object = GetRoomEngine().getRoomObject(roomSession.roomId, event.objectId, event.category);
 
         if(!object) return;
@@ -165,6 +167,7 @@ const useFurnitureContextMenuWidgetState = () =>
 
     useMessageEvent<GroupFurniContextMenuInfoMessageEvent>(GroupFurniContextMenuInfoMessageEvent, event =>
     {
+        console.log('📋 [FURNITURE DEBUG] ContextMenu - GroupFurniContextMenuInfoMessageEvent recebido:', event);
         const parser = event.getParser();
 
         setObjectId(parser.objectId);

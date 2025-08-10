@@ -6,6 +6,7 @@ export * from './useFurnitureDimmerWidget';
 export * from './useFurnitureExchangeWidget';
 export * from './useFurnitureExternalImageWidget';
 export * from './useFurnitureFriendFurniWidget';
+export * from './useFurnitureGlobalLogger';
 export * from './useFurnitureHighScoreWidget';
 export * from './useFurnitureInternalLinkWidget';
 export * from './useFurnitureMannequinWidget';

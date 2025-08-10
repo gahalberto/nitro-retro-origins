@@ -8,6 +8,7 @@ const MAX_HEIGHT: number = 40;
 
 const useFurnitureStackHeightWidgetState = () =>
 {
+    console.log('📏 [FURNITURE DEBUG] useFurnitureStackHeightWidgetState - Hook inicializado');
     const [ objectId, setObjectId ] = useState(-1);
     const [ category, setCategory ] = useState(-1);
     const [ height, setHeight ] = useState(0);
@@ -45,6 +46,7 @@ const useFurnitureStackHeightWidgetState = () =>
 
     useRoomEngineEvent<RoomEngineTriggerWidgetEvent>(RoomEngineTriggerWidgetEvent.REQUEST_STACK_HEIGHT, event =>
     {
+        console.log('📏 [FURNITURE DEBUG] StackHeight - REQUEST_STACK_HEIGHT evento recebido:', event);
         if(!CanManipulateFurniture(GetRoomSession(), event.objectId, event.category)) return;
 
         const roomObject = GetRoomEngine().getRoomObject(event.roomId, event.objectId, event.category);

@@ -6,6 +6,7 @@ import { useFurniRemovedEvent } from '../../engine';
 
 const useFurnitureTrophyWidgetState = () =>
 {
+    console.log('🏆 [FURNITURE DEBUG] useFurnitureTrophyWidgetState - Hook inicializado');
     const [ objectId, setObjectId ] = useState(-1);
     const [ category, setCategory ] = useState(-1);
     const [ color, setColor ] = useState('1');
