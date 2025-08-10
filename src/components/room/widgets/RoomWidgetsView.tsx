@@ -18,6 +18,7 @@ import { WordQuizWidgetView } from './word-quiz/WordQuizWidgetView';
 
 export const RoomWidgetsView: FC<{}> = props =>
 {
+    console.log('RoomWidgetsView props', props);
     const { roomSession = null } = useRoom();
     const { simpleAlert = null } = useNotification();
 

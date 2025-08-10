@@ -2,6 +2,7 @@ import { FC, useEffect, useRef } from 'react';
 import { DispatchMouseEvent, DispatchTouchEvent, GetNitroInstance } from '../../api';
 import { Base } from '../../common';
 import { useRoom } from '../../hooks';
+import { useFurnitureGlobalLogger } from '../../hooks/rooms/widgets/furniture';
 import { RoomSpectatorView } from './spectator/RoomSpectatorView';
 import { RoomWidgetsView } from './widgets/RoomWidgetsView';
 
@@ -9,6 +10,9 @@ export const RoomView: FC<{}> = props =>
 {
     const { roomSession = null } = useRoom();
     const elementRef = useRef<HTMLDivElement>();
+    
+    // Ativa o logger global para detectar eventos de móveis
+    useFurnitureGlobalLogger();
 
     useEffect(() =>
     {
